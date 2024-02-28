@@ -14,6 +14,6 @@ class JogosController extends Controller
         // Passando parâmetros para rota jogos, fica mais seguro via Controller do que via router.
         $id = 1;
         $nome = 'Bruno Lima';
-        return view('jogos', ['nome'=>$nome, 'id'=>$id]);
+        return view('jogos.index', ['nome'=>$nome, 'id'=>$id]);
     }
 }
