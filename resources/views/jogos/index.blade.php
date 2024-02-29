@@ -6,7 +6,14 @@
     <!-- Tudo aqui dentro vai ser renderizado lá no template app.blade.php -->
     <section class="d-flex align-items-center" style="height: 100vh">
         <div class="container">
-            <h1>Listagem de Jogos</h1>
+            <div class="row">
+                <div class="col-sm-10">
+                    <h1>Listagem de Jogos</h1>
+                </div>
+                <div class="col-sm-2">
+                    <a href="{{ route('jogos-create') }}" class="btn btn-success">Novo Jogo</a>
+                </div>
+            </div>
             <table class="table">
                 <thead>
                     <tr>

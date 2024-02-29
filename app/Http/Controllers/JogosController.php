@@ -15,4 +15,14 @@ class JogosController extends Controller
         //dd($jogos); // saneamento das variaveis, para ver se está retornando igual o var_dump()
         return view('jogos.index', ['jogos'=>$jogos]);
     }
+
+    public function create() {
+        return view('jogos.create');
+    }
+
+    public function store(Request $request) {
+        //dd($request);
+        Jogo::create($request->all()); // salva o request do tipo post
+        return redirect()->route('jogos-index');
+    }
 }
