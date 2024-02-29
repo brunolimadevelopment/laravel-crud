@@ -1,4 +1,4 @@
-const mix = require('laravel-mix');
+const mix = require("laravel-mix");
 
 /*
  |--------------------------------------------------------------------------
@@ -11,5 +11,11 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-   .sass('resources/sass/app.scss', 'public/css');
+mix.js("resources/js/app.js", "public/js")
+    .sass("resources/sass/app.scss", "public/css", {
+        implementation: require("sass"), // Use a implementação Sass (Dart Sass) em vez da implementação padrão do Node Sass
+        sassOptions: {
+            quietDeps: true, // Suprime mensagens de aviso de dependência
+        },
+    })
+    .vue();
