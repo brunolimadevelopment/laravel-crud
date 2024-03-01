@@ -25,4 +25,25 @@ class JogosController extends Controller
         Jogo::create($request->all()); // salva o request do tipo post
         return redirect()->route('jogos-index');
     }
+    public function edit($id) {
+        $jogos = Jogo::where('id', $id)->first();
+        if(!empty($jogos))
+        {
+            return view('jogos.edit', ['jogos'=>$jogos]);
+        } else {
+            return redirect()->route('jogos-index');
+        }
+    }
+    public function update(Request $request, $id) {
+        //dd($request);
+        $data = [
+            'nome' => $request->nome,
+            'categoria' => $request->categoria,
+            'ano_criacao' => $request->ano_criacao,
+            'valor' => $request->valor,
+        ];
+        // model Jogo - enviando os dados do form para o banco.
+        Jogo::where('id',$id)->update($data);
+        return redirect()->route('jogos-index');
+    }
 }
