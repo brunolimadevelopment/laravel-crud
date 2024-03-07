@@ -8,6 +8,11 @@ use Illuminate\Http\Request; // Permite que você importe classes em seu arquivo
 class JogosController extends Controller
 {
 
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         //dd('Olá mundo');
