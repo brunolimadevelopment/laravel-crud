@@ -36,5 +36,7 @@ Route::prefix('jogos')->group(function() {
 //Route::get('/jogos', [JogosController::class, 'index']);
 
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
-
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/contato', 'ContatoController@index')->name('contato');
+Route::post('/submit-contato', 'ContatoController@submit')->name('contato.submit');
+
